@@ -12,13 +12,7 @@ public class ClienteUI extends JFrame{
     private JPanel JPanel;
 
     public ClienteUI() {
-
         setContentPane(JPanel);
-        setTitle("Cliente RMI");
-        setSize(400, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
         buscarEmpleadoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -30,7 +24,7 @@ public class ClienteUI extends JFrame{
                 try {
                     int empleadoId = Integer.parseInt(id);
                     String resultado = Cliente.consultar(empleadoId);
-                    JOptionPane.showMessageDialog(null, "Resultado:\n" + resultado);
+                    JOptionPane.showMessageDialog(null, "Empleado Encontrado:\n" + resultado);
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "ID debe ser un número entero.");
                 } catch (Exception ex) {
